@@ -3,29 +3,27 @@
 %bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-#%define		pdir	-
 %define		pnam	Petal
 Summary:	Petal - Perl Template Attribute Language - TAL for Perl!
 Summary(pl):	Petal - Perl Template Attribute Language - TAL dla Perla!
 Name:		perl-Petal
 Version:	2.18
 Release:	0.1
-# note if it is "same as perl"
 License:	same as perl
 Group:		Development/Languages/Perl
 Source0:	http://search.cpan.org/CPAN/authors/id/B/BP/BPOSTLE/%{pnam}-%{version}.tar.gz
-#Patch0:		%{name}
+# Source0-md5:	40fc181e53122705570102695ae9240c
 URL:		http://search.cpan.org/~bpostle/Petal-2.18/lib/Petal.pm
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
-#BuildRequires:	-
 %if %{with tests}
-BuildRequires:	perl
-BuildRequires:	perl
+BuildRequires:	perl-Lingua-31337
+BuildRequires:	perl-MKDoc-XML
+BuildRequires:	perl-Locale-Maketext-Gettext
 %endif
-#Requires:	-
-#Provides:	-
-#Obsoletes:	-
+Requires:	perl-Lingua-31337
+Requires:	perl-MKDoc-XML
+Requires:	perl-Locale-Maketext-Gettext
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -46,7 +44,6 @@ and ifs which happen behind the scene.
 
 %prep
 %setup -q -n %{pnam}-%{version}
-#%patch0 -p1
 
 %build
 # Don't use pipes here: they generally don't work. Apply a patch.
@@ -73,11 +70,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes README
-# note it's mostly easier to copy unpackaged filelist here, and run adapter over the spec.
-# use macros:
-#%%{perl_vendorlib}/...
-#%%{perl_vendorarch}/...
-#%%{perl_vendorlib}/
 %{perl_vendorarch}/auto/Petal/.packlist
 %{perl_vendorlib}/Petal.pm
 %{perl_vendorlib}/Petal/Cache/Disk.pm
