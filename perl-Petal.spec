@@ -9,7 +9,8 @@ Summary(pl):	Petal - Perl Template Attribute Language - TAL dla Perla!
 Name:		perl-Petal
 Version:	2.18
 Release:	0.1
-License:	same as perl
+# same as perl
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://search.cpan.org/CPAN/authors/id/B/BP/BPOSTLE/%{pnam}-%{version}.tar.gz
 # Source0-md5:	40fc181e53122705570102695ae9240c
@@ -27,33 +28,40 @@ Requires:	perl-Locale-Maketext-Gettext
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_noautoreq	'perl(anything_fake_or_conditional)'
-
 %description
-Petal is a XML based templating engine that is able to process any kind 
-of XML, XHTML and HTML.
+Petal is a XML based templating engine that is able to process any
+kind of XML, XHTML and HTML.
 
-Petal borrows a lot of good ideas from the Zope Page Templates TAL 
-specification, it is very well suited for the creation of WYSIWYG 
+Petal borrows a lot of good ideas from the Zope Page Templates TAL
+specification, it is very well suited for the creation of WYSIWYG
 XHTML editable templates.
 
-The idea is to further enforce the separation of logic from presentation. 
-With Petal, graphic designers can use their favorite WYSIWYG editor 
-to easily edit templates without having to worry about the loops 
-and ifs which happen behind the scene.
+The idea is to further enforce the separation of logic from
+presentation. With Petal, graphic designers can use their favorite
+WYSIWYG editor to easily edit templates without having to worry about
+the loops and ifs which happen behind the scene.
+
+%description -l pl
+Petal to silnik szablonów oparty na XML-u, potrafi±cy przetwarzaæ
+dowolny rodzaj XML-a, XHTML-a i HTML-a.
+
+Petal zapo¿ycza wiele dobrych pomys³ów ze specyfikacji TAL Zope Page
+Templates i jest bardzo dobrze dopasowany do tworzenia modyfikowalnych
+szablonów WYSIWYG XHTML.
+
+Ide± jest dalsze wymuszenie oddzielenia logiki od prezentacji. Przy
+u¿yciu Petala projektanci grafiki mog± u¿ywaæ swojego ulubionego
+edytora WYSIWYG do ³atwego modyfikowania szablonów bez potrzeby
+martwienia siê o pêtle i warunki ukryte za scen±.
 
 %prep
 %setup -q -n %{pnam}-%{version}
 
 %build
-# Don't use pipes here: they generally don't work. Apply a patch.
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
 
 %{__make}
-# if module isn't noarch, use:
-# %{__make} \
-#	OPTIMIZE="%{rpmcflags}"
 
 %{?with_tests:%{__make} test}
 
@@ -66,14 +74,15 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-					       
 %files
 %defattr(644,root,root,755)
 %doc Changes README
-%{perl_vendorarch}/auto/Petal/.packlist
 %{perl_vendorlib}/Petal.pm
+%dir %{perl_vendorlib}/Petal
+%dir %{perl_vendorlib}/Petal/Cache
 %{perl_vendorlib}/Petal/Cache/Disk.pm
 %{perl_vendorlib}/Petal/Cache/Memory.pm
+%dir %{perl_vendorlib}/Petal/Canonicalizer
 %{perl_vendorlib}/Petal/Canonicalizer/XHTML.pm
 %{perl_vendorlib}/Petal/Canonicalizer/XML.pm
 %{perl_vendorlib}/Petal/CodeGenerator.pm
@@ -87,6 +96,7 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorlib}/Petal/Hash/Var.pm
 %{perl_vendorlib}/Petal/I18N.pm
 %{perl_vendorlib}/Petal/Parser.pm
+%dir %{perl_vendorlib}/Petal/TranslationService
 %{perl_vendorlib}/Petal/TranslationService/Gettext.pm
 %{perl_vendorlib}/Petal/TranslationService/MOFile.pm
 %{perl_vendorlib}/Petal/TranslationService/Noop.pm
