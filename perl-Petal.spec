@@ -8,7 +8,7 @@ Summary:	Petal - Perl Template Attribute Language - TAL for Perl!
 Summary(pl):	Petal - Perl Template Attribute Language - TAL dla Perla!
 Name:		perl-Petal
 Version:	2.19
-Release:	1
+Release:	2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
@@ -79,26 +79,13 @@ rm -rf $RPM_BUILD_ROOT
 %doc Changes README
 %{perl_vendorlib}/Petal.pm
 %dir %{perl_vendorlib}/Petal
+%{perl_vendorlib}/Petal/*.pm
 %dir %{perl_vendorlib}/Petal/Cache
-%{perl_vendorlib}/Petal/Cache/Disk.pm
-%{perl_vendorlib}/Petal/Cache/Memory.pm
+%{perl_vendorlib}/Petal/Cache/*.pm
 %dir %{perl_vendorlib}/Petal/Canonicalizer
-%{perl_vendorlib}/Petal/Canonicalizer/XHTML.pm
-%{perl_vendorlib}/Petal/Canonicalizer/XML.pm
-%{perl_vendorlib}/Petal/CodeGenerator.pm
-%{perl_vendorlib}/Petal/Cookbook.pod
-%{perl_vendorlib}/Petal/Deprecated.pm
-%{perl_vendorlib}/Petal/Entities.pm
-%{perl_vendorlib}/Petal/Functions.pm
-%{perl_vendorlib}/Petal/Hash.pm
-%{perl_vendorlib}/Petal/Hash/String.pm
-%{perl_vendorlib}/Petal/Hash/Test.pm
-%{perl_vendorlib}/Petal/Hash/Var.pm
-%{perl_vendorlib}/Petal/I18N.pm
-%{perl_vendorlib}/Petal/Parser.pm
+%{perl_vendorlib}/Petal/Canonicalizer/*.pm
+%dir %{perl_vendorlib}/Petal/Hash
+%{perl_vendorlib}/Petal/Hash/*.pm
 %dir %{perl_vendorlib}/Petal/TranslationService
-%{perl_vendorlib}/Petal/TranslationService/Gettext.pm
-%{perl_vendorlib}/Petal/TranslationService/MOFile.pm
-%{perl_vendorlib}/Petal/TranslationService/Noop.pm
-%{perl_vendorlib}/Petal/TranslationService/h4x0r.pm
+%{perl_vendorlib}/Petal/TranslationService/*.pm
 %{_mandir}/man3/*
