@@ -7,13 +7,13 @@
 Summary:	Petal - Perl Template Attribute Language - TAL for Perl!
 Summary(pl):	Petal - Perl Template Attribute Language - TAL dla Perla!
 Name:		perl-Petal
-Version:	2.18
-Release:	0.1
+Version:	2.19
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://search.cpan.org/CPAN/authors/id/B/BP/BPOSTLE/%{pnam}-%{version}.tar.gz
-# Source0-md5:	40fc181e53122705570102695ae9240c
+# Source0-md5:	5be2cd6bba2be5d61aa82be5849e4a09
 URL:		http://search.cpan.org/~bpostle/Petal-2.18/lib/Petal.pm
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
