@@ -5,7 +5,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pnam	Petal
 Summary:	Petal - Perl Template Attribute Language - TAL for Perl!
-Summary(pl):	Petal - Perl Template Attribute Language - TAL dla Perla!
+Summary(pl.UTF-8):   Petal - Perl Template Attribute Language - TAL dla Perla!
 Name:		perl-Petal
 Version:	2.19
 Release:	2
@@ -41,18 +41,18 @@ presentation. With Petal, graphic designers can use their favorite
 WYSIWYG editor to easily edit templates without having to worry about
 the loops and ifs which happen behind the scene.
 
-%description -l pl
-Petal to silnik szablonów oparty na XML-u, potrafi±cy przetwarzaæ
+%description -l pl.UTF-8
+Petal to silnik szablonÃ³w oparty na XML-u, potrafiÄ…cy przetwarzaÄ‡
 dowolny rodzaj XML-a, XHTML-a i HTML-a.
 
-Petal zapo¿ycza wiele dobrych pomys³ów ze specyfikacji TAL Zope Page
+Petal zapoÅ¼ycza wiele dobrych pomysÅ‚Ã³w ze specyfikacji TAL Zope Page
 Templates i jest bardzo dobrze dopasowany do tworzenia modyfikowalnych
-szablonów WYSIWYG XHTML.
+szablonÃ³w WYSIWYG XHTML.
 
-Ide± jest dalsze wymuszenie oddzielenia logiki od prezentacji. Przy
-u¿yciu Petala projektanci grafiki mog± u¿ywaæ swojego ulubionego
-edytora WYSIWYG do ³atwego modyfikowania szablonów bez potrzeby
-martwienia siê o pêtle i warunki ukryte za scen±.
+IdeÄ… jest dalsze wymuszenie oddzielenia logiki od prezentacji. Przy
+uÅ¼yciu Petala projektanci grafiki mogÄ… uÅ¼ywaÄ‡ swojego ulubionego
+edytora WYSIWYG do Å‚atwego modyfikowania szablonÃ³w bez potrzeby
+martwienia siÄ™ o pÄ™tle i warunki ukryte za scenÄ….
 
 %prep
 %setup -q -n %{pnam}-%{version}
