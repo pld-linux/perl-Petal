@@ -5,7 +5,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pnam	Petal
 Summary:	Petal - Perl Template Attribute Language - TAL for Perl!
-Summary(pl.UTF-8):   Petal - Perl Template Attribute Language - TAL dla Perla!
+Summary(pl.UTF-8):	Petal - Perl Template Attribute Language - TAL dla Perla!
 Name:		perl-Petal
 Version:	2.19
 Release:	2
