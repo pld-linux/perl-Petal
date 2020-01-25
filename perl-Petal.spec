@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 %define		pnam	Petal
 Summary:	Petal - Perl Template Attribute Language - TAL for Perl!
 Summary(pl.UTF-8):	Petal - Perl Template Attribute Language - TAL dla Perla!
